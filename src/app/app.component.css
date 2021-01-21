@@ -30,3 +30,8 @@
   margin-top:-6px;
 }
 
+.dropdown-menu > li > a:hover:after {
+  text-decoration: underline;
+  transform: rotate(-90deg);
+}
+
