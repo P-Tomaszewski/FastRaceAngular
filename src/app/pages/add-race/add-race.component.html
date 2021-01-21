@@ -1,30 +1,48 @@
 <div class="page">
-<div class="container featuresRace">
-  <h1>Add Race</h1>
-  <div class="md-form">
-    <label for="racename">Race name</label>
-    <input type="text" id="racename" class="form-control" onblur="checkRaceName()">
-    <div id="feedbackRacename"></div>
+  <div class="container featuresRace">
+    <form (ngSubmit)="onSubmit()" #driverForm="ngForm">
+      <h1>Add Race</h1>
+      <div class="md-form">
+        <label for="name">Race name</label>
+        <input type="text" [(ngModel)]="race.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter race name"
+               required #name="ngModel">
+        <div id="feedbackRacename"></div>
+      </div>
+      <div class="md-form">
+        <label for="surface">Surface</label>
+        <select type="text" [(ngModel)]="race.surface"
+                class="form-control"
+                id="surface"
+                name="surface"
+                placeholder="Enter race name"
+                required #lastName="ngModel">
+          <option> Asfalt</option>
+
+          <option> Żwir</option>
+
+          <option> Mieszana</option>
+
+          <option> Inne</option>
+        </select>
+      </div>
+      <div class="md-form">
+        <label for="data">data</label>
+        <input type="date" [(ngModel)]="race.data"
+               class="form-control"
+               id="data"
+               name="data"
+               placeholder="Enter date"
+               required #lastName="ngModel">
+        <div id="feedbackDate"></div>
+      </div>
+
+      <button id="addRace" class="btn btn-outline-secondary btn-lg"
+              onclick="checkRaceName()">Add race
+      </button>
+    </form>
   </div>
-  <div class="md-form">
-    <label for="surface">Surface</label>
-    <select name="Surface" id="surface" class="form-control">
-      <option> Asfalt </option>
-
-      <option> Żwir </option>
-
-      <option> Mieszana </option>
-
-      <option> Inne </option>
-    </select>
-  </div>
-  <div class="md-form">
-    <label for="date">data</label>
-    <input type=date id="date" class="form-control">
-    <div id="feedbackDate"></div>
-  </div>
-
-  <button id="addRace" class="btn btn-outline-secondary btn-lg"
-          onclick="checkRaceName()">Add race</button>
-</div>
 </div>

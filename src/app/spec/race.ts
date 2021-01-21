@@ -5,5 +5,4 @@ export class Race {
   name: string;
   surface: string;
   data: DateTimeFormat;
-  car: string;
 }
