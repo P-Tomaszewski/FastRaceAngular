@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { AddDriverDataInputComponent } from './add-driver-data-input/add-driver-data-input.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddDriverComponent } from './pages/add-driver/add-driver.component';
 import { AddRaceComponent } from './pages/add-race/add-race.component';
@@ -18,7 +17,6 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
   declarations: [
     AppComponent,
     MenuComponent,
-    AddDriverDataInputComponent,
     HomeComponent,
     AddDriverComponent,
     AddRaceComponent,
@@ -26,7 +24,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     ContactComponent,
     ResultComponent,
     TopComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule

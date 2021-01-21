@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Driver} from '../../spec/driver';
+import {DriverService} from '../../service/driver.service';
 
 @Component({
   selector: 'app-top',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopComponent implements OnInit {
 
-  constructor() { }
+  drivers: Driver[];
 
-  ngOnInit(): void {
+  constructor(private driverService: DriverService) {
+  }
+
+  ngOnInit() {
+    // this.driverService.findAll().subscribe(data => {
+    //   this.drivers = data;
+    // });
   }
 
 }

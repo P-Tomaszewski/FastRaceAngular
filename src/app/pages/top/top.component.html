@@ -1,48 +1,27 @@
+<div class="page">
 <h1 class='mb-3'>Top3 drivers</h1>
 <table id="dtBasicExample" class="table" width="100%">
   <thead>
   <tr>
-    <th class="th-sm">Place
-    </th>
-    <th class="th-sm">Name
-    </th>
-    <th class="th-sm">Lastname
-    </th>
-    <th class="th-sm">Team
-    </th>
-    <th class="th-sm">Car
-    </th>
-    <th class="th-sm">Score
-    </th>
+    <th scope="col">Place</th>
+    <th scope="col">Name</th>
+    <th scope="col">Lastname</th>
+    <th scope="col">Team</th>
+    <th scope="col">Car</th>
+    <th scope="col">Score</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1.</td>
-    <td>ADAM</td>
-    <td>JURECKI</td>
-    <td>STW</td>
-    <td>BMW E30 344i</td>
-    <td>101</td>
-  </tr>
-  <tr>
-    <td>2.</td>
-    <td>ARTUR</td>
-    <td>KRZYSZTON</td>
-    <td>TurboWorks Drift Team</td>
-    <td>BMW E30 340i</td>
-    <td>97</td>
-
-  </tr>
-  <tr>
-    <td>3.</td>
-    <td>ARKADIUSZ</td>
-    <td>KUBICZEK</td>
-    <td>AMZ Motorsport Team</td>
-    <td>BMW E30 335i</td>
-    <td>97</td>
+  <tr *ngFor="let driver of drivers">
+    <td>"0"</td>
+    <td>{{ driver.firstName }}</td>
+    <td>{{ driver.lastName }}</td>
+    <td>{{ driver.team }}</td>
+    <td>{{ driver.car }}</td>
+    <td>"0"</td>
   </tr>
   </tbody>
   <tfoot>
   </tfoot>
 </table>
+</div>
