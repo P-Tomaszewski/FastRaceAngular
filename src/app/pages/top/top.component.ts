@@ -15,9 +15,9 @@ export class TopComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.driverService.findAll().subscribe(data => {
-    //   this.drivers = data;
-    // });
+    this.driverService.findAll().subscribe(data => {
+      this.drivers = data;
+    });
   }
 
 }

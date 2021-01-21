@@ -12,6 +12,9 @@ import { ResultComponent } from './pages/result/result.component';
 import { TopComponent } from './pages/top/top.component';
 import {AppRoutingModule} from './app-routing.module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import {DriverService} from './service/driver.service';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,10 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     PageNotFoundComponent,
   ],
   imports: [
-    BrowserModule, AppRoutingModule
+    BrowserModule, AppRoutingModule, HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DriverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
