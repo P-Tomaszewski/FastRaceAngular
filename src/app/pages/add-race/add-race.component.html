@@ -20,18 +20,16 @@
                 name="surface"
                 placeholder="Enter race name"
                 required #lastName="ngModel">
-          <option> Asfalt</option>
+          <option> CONCRETE</option>
 
-          <option> Żwir</option>
+          <option> GRAVEL</option>
 
-          <option> Mieszana</option>
-
-          <option> Inne</option>
+          <option> ASPHALT</option>
         </select>
       </div>
       <div class="md-form">
         <label for="data">data</label>
-        <input type="date" [(ngModel)]="race.data"
+        <input type="datetime-local" [(ngModel)]="race.data"
                class="form-control"
                id="data"
                name="data"
