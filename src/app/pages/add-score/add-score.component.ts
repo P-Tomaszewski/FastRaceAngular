@@ -35,11 +35,15 @@ export class AddScoreComponent implements OnInit {
   }
 
   onSubmit() {
-    this.scoreService.save(this.score).subscribe(result => this.gotoUserList());
+    this.scoreService.save(this.score).subscribe();
+    this.refresh();
   }
 
-  gotoUserList() {
-    this.router.navigate(['/top']);
-  }
+  // gotoUserList() {
+  //   this.router.navigate(['/add-score']);
+  // }
 
+  refresh(): void {
+    window.location.reload();
+  }
 }

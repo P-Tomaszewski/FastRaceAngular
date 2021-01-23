@@ -19,11 +19,17 @@ export class AddRaceComponent  {
   }
 
   onSubmit() {
-    this.raceService.save(this.race).subscribe(result => this.gotoUserList());
+    this.raceService.save(this.race).subscribe();
+    this.refresh();
   }
 
-  gotoUserList() {
-    this.router.navigate(['/top']);
+  // gotoUserList() {
+  //   this.router.navigate(['/add-race']);
+  //   this.refresh()
+  // }
+
+  refresh(): void {
+    window.location.reload();
   }
 
 }

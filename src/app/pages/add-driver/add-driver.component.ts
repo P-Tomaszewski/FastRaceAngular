@@ -19,11 +19,15 @@ export class AddDriverComponent {
   }
 
   onSubmit() {
-    this.driverService.save(this.driver).subscribe(result => this.gotoUserList());
+    this.driverService.save(this.driver).subscribe();
+    this.refresh();
   }
 
-  gotoUserList() {
-    this.router.navigate(['/top']);
-  }
+  // gotoUserList() {
+  //   this.router.navigate(['/add-driver']);
+  // }
 
+  refresh(): void {
+    window.location.reload();
+  }
 }

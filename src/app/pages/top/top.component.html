@@ -12,13 +12,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let driver of drivers">
-    <td>"0"</td>
-    <td>{{ driver.firstName }}</td>
-    <td>{{ driver.lastName }}</td>
-    <td>{{ driver.team }}</td>
-    <td>{{ driver.car }}</td>
-    <td>"0"</td>
+  <tr *ngFor="let top of top; let i = index" [attr.aria-rowindex]="i">
+    <td>{{i+1}}</td>
+    <td>{{ top.firstName }}</td>
+    <td>{{ top.lastName }}</td>
+    <td>{{ top.team }}</td>
+    <td>{{ top.car }}</td>
+    <td>{{top.score}}</td>
   </tr>
   </tbody>
   <tfoot>

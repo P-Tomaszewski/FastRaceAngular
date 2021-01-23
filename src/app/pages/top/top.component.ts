@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Driver} from '../../spec/driver';
 import {DriverService} from '../../service/driver.service';
+import {Top} from '../../spec/top';
+import {TopService} from '../../service/top.service';
 
 @Component({
   selector: 'app-top',
@@ -9,15 +11,14 @@ import {DriverService} from '../../service/driver.service';
 })
 export class TopComponent implements OnInit {
 
-  drivers: Driver[];
+  top: Top[];
 
-  constructor(private driverService: DriverService) {
+  constructor(private topService: TopService) {
   }
 
   ngOnInit() {
-    this.driverService.findAll().subscribe(data => {
-      this.drivers = data;
+    this.topService.getScoreReadModels().subscribe(data => {
+      this.top = data;
     });
   }
-
 }
