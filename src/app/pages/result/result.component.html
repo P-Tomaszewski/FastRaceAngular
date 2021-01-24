@@ -1,19 +1,18 @@
 <div class="page">
 <div class="container featuresRace">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
   <div class="md-form">
+
     <label for="driver">Driver</label>
-    <select name="Driver" id="driver" class="form-control">
-      <!--Kierowca będzie pobierany z bazy i wyświetlany do wyboru (nazwa+data)-->
-      <option> Adam Jarkiewicz </option>
-
-      <option> Grzegorz Ludwicki </option>
-
-      <option> Paweł Jurecki </option>
+    <select name="Driver" id="driver" class="form-control" [(ngModel)]="resultDriver.driverId">
+      <option *ngFor="let driver of drivers"
+              [ngValue]="driver.id"
+      > {{ driver.firstName }} </option>
     </select>
   </div>
 
   <button id="showScore" class="btn btn-outline-secondary btn-lg"
-          onclick="setDriver()">Show score</button>
+          onclick="">Show score</button>
 
   <h1 id="feedbackDriver"></h1>
   <table class="table table-dark">
@@ -25,22 +24,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>AMZ Motorsport Team</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>TurboWorks Drift Team</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>STW</td>
-      <td>18</td>
+    <tr *ngFor="let result of result; let i = index" [attr.aria-rowindex]="i">
+      <td>{{i+1}}</td>
+      <td>{{result.race}}</td>
+      <td>{{result.score }}</td>
     </tr>
     </tbody>
   </table>
+  </form>
 </div>
 </div>
