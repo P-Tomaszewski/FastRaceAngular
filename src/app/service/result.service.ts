@@ -13,10 +13,10 @@ export class ResultService {
   resultUrl: string;
 
   constructor(private http: HttpClient) {
-    this.resultUrl = 'http://localhost:8080/result';
+    this.resultUrl = 'http://localhost:8080/result/';
   }
 
   public getResults(resultDriver: ResultDriver): Observable<Result[]> {
-    return this.http.get<Result[]>(this.resultUrl).pipe(tap(console.log))
+    return this.http.get<Result[]>(this.resultUrl + "1347").pipe(tap(console.log))
   }
 }

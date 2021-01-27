@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'add-score', component: AddScoreComponent},
   {path: 'add-driver', component: AddDriverComponent},
   {path: 'add-race', component: AddRaceComponent},
+  {path: 'result/:id', component: ResultComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'home', component: HomeComponent},
   {path: 'result', component: ResultComponent},

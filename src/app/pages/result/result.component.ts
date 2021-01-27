@@ -2,12 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Driver} from '../../spec/driver';
 import {DriverService} from '../../service/driver.service';
 import {Result} from '../../spec/result';
-import {RaceService} from '../../service/race.service';
-import {ScoreService} from '../../service/score.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Race} from '../../spec/race';
 import {ResultService} from '../../service/result.service';
-import {Score} from '../../spec/score';
 import {ResultDriver} from '../../spec/resultDriver';
 
 @Component({
@@ -32,7 +28,6 @@ export class ResultComponent implements OnInit {
     this.driverService.findAll().subscribe(data => {
       this.drivers = data;
     });
-
   }
 
   onSubmit() {

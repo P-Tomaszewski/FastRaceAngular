@@ -1,5 +1,4 @@
 export class Result {
+  raceName: string;
   score: number;
-  race: string;
-  driverId: number;
 }
