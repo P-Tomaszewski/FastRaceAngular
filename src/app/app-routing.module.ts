@@ -9,9 +9,11 @@ import {HomeComponent} from './pages/home/home.component';
 import {ResultComponent} from './pages/result/result.component';
 import {TopComponent} from './pages/top/top.component';
 import {DeleteComponent} from './pages/delete/delete.component';
+import {LoginComponent} from './pages/login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
   {path: 'add-score', component: AddScoreComponent},
   {path: 'add-driver', component: AddDriverComponent},
   {path: 'add-race', component: AddRaceComponent},

@@ -16,6 +16,7 @@ import {DriverService} from './service/driver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DeleteComponent } from './pages/delete/delete.component';
+import {LoginComponent} from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import { DeleteComponent } from './pages/delete/delete.component';
     TopComponent,
     PageNotFoundComponent,
     DeleteComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,
