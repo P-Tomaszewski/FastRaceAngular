@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import {DriverService} from './service/driver.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { DeleteComponent } from './pages/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {HttpClientModule} from '@angular/common/http';
     ResultComponent,
     TopComponent,
     PageNotFoundComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

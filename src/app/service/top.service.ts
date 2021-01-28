@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Driver} from '../spec/driver';
 import {Top} from '../spec/top';
 
 @Injectable({

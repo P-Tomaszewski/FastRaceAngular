@@ -8,6 +8,7 @@ import {ContactComponent} from './pages/contact/contact.component';
 import {HomeComponent} from './pages/home/home.component';
 import {ResultComponent} from './pages/result/result.component';
 import {TopComponent} from './pages/top/top.component';
+import {DeleteComponent} from './pages/delete/delete.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'result', component: ResultComponent},
   {path: 'top', component: TopComponent},
+  {path: 'delete', component: DeleteComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 
