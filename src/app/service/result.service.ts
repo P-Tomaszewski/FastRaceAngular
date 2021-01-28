@@ -17,6 +17,8 @@ export class ResultService {
   }
 
   public getResults(resultDriver: ResultDriver): Observable<Result[]> {
-    return this.http.get<Result[]>(this.resultUrl + "1347").pipe(tap(console.log))
+    return this.http.get<Result[]>(this.resultUrl + resultDriver.driverId).pipe(tap(console.log))
   }
+
+
 }

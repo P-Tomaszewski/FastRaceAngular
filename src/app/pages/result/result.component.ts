@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Driver} from '../../spec/driver';
 import {DriverService} from '../../service/driver.service';
 import {Result} from '../../spec/result';
@@ -31,7 +31,12 @@ export class ResultComponent implements OnInit {
   }
 
   onSubmit() {
-    this.resultService.getResults(this.resultDriver).subscribe();
+    this.resultService.getResults(this.resultDriver).subscribe(data => {
+      this.result = data;
+    });
+  }
+  refresh(): void {
+    window.location.reload();
   }
 
 }
