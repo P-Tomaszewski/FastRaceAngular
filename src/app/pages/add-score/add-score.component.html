@@ -4,7 +4,7 @@
   <h1>Add Score</h1>
   <div class="md-form">
     <label for="race">Race</label>
-    <select  name="Race" id="race" class="form-control" [(ngModel)]="score.race">
+    <select  name="Race" id="race" class="form-control" required [(ngModel)]="score.race">
       <option *ngFor="let race of races"
               [ngValue]="race.id"
       > {{ race.name }} </option>
@@ -12,7 +12,7 @@
   </div>
   <div class="md-form">
     <label for="driver">Driver</label>
-    <select name="Driver" id="driver" class="form-control" [(ngModel)]="score.driver">
+    <select name="Driver" id="driver" class="form-control"  required [(ngModel)]="score.driver">
       <option *ngFor="let driver of drivers"
               [ngValue]="driver.id"
       > {{ driver.firstName }} </option>
@@ -28,7 +28,7 @@
            required #lastName="ngModel">
   </div>
   <button class="btn btn-outline-secondary btn-lg"
-          onclick="">Add score</button>
+          [disabled]="userForm.invalid">Add score</button>
   </form>
 </div>
 </div>

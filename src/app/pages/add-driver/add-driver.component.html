@@ -1,5 +1,5 @@
 <div class="page">
-<div class="container featuresRace">
+  <div class="container featuresRace">
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
   <h1>Add Driver</h1>
   <div class="md-form">
@@ -9,7 +9,7 @@
            id="name"
            name="name"
            placeholder="Enter your name"
-           required #name="ngModel">
+           required>
     <div id="feedbackName"></div>
   </div>
   <div class="md-form">
@@ -44,7 +44,7 @@
   </div>
 
   <button id="addDriver" class="btn btn-outline-secondary btn-lg"
-          onclick="checkName()">Add driver
+          [disabled]="userForm.invalid">Add driver
   </button>
   </form>
 </div>

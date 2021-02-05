@@ -20,7 +20,9 @@
   top: 0;
   background: rgba(0, 0, 0, 0.6);
 }
-
+.ng-invalid.ng-touched:not(form){
+  border-bottom: 3px solid red;
+}
 .description {
   left: 50%;
   position: absolute;

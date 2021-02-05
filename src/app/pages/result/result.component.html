@@ -12,7 +12,7 @@
   </div>
 
   <button id="showScore" class="btn btn-outline-secondary btn-lg" [routerLink]="['/result', resultDriver.driverId]"
-          type="submit">Show score</button>
+          type="submit" [disabled]="userForm.invalid">Show score</button>
 
   <h1 id="feedbackDriver"></h1>
   <table class="table table-dark">
