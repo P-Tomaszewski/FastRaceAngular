@@ -26,6 +26,8 @@ export class AddScoreComponent implements OnInit {
   }
 
   ngOnInit() {
+    const token = this.route.snapshot.queryParamMap.get('token');
+
     this.driverService.findAll().subscribe(data => {
       this.drivers = data;
     });

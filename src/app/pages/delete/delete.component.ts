@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {DeleteService} from '../../service/delete.service';
 import {ResultDriver} from '../../spec/resultDriver';
 import {DriverService} from '../../service/driver.service';
 import {Driver} from '../../spec/driver';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-delete',
@@ -13,9 +14,12 @@ import {Driver} from '../../spec/driver';
 export class DeleteComponent implements OnInit {
   drivers: Driver[];
   resultDriver: ResultDriver;
+  userName: string;
+
 
   constructor(private deleteService: DeleteService,
-              private driverService: DriverService,) {
+              private driverService: DriverService,
+              private http: HttpClient) {
     this.resultDriver = new ResultDriver();
   }
 
@@ -23,6 +27,23 @@ export class DeleteComponent implements OnInit {
     this.driverService.findAll().subscribe(data => {
       this.drivers = data;
     });
+
+    let url = 'http://localhost:8080/user';
+    let headers: HttpHeaders = new HttpHeaders({
+      'Authorization': 'Basic' + sessionStorage.getItem('token')
+    });
+
+    let options = { headers: headers };
+    this.http.post<Observable<Object>>(url, {}, options).
+    subscribe(principal => {
+        this.userName = principal['name'];
+      },
+      error => {
+        if(error.status == 401)
+          alert('Unauthorized Dupa');
+      }
+    );
+
   }
 
   onSubmit() {

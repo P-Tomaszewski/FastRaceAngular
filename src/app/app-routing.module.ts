@@ -12,7 +12,8 @@ import {DeleteComponent} from './pages/delete/delete.component';
 import {LoginComponent} from './pages/login/login.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  // {path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   {path: 'add-score', component: AddScoreComponent},
   {path: 'add-driver', component: AddDriverComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'result', component: ResultComponent},
   {path: 'top', component: TopComponent},
   {path: 'delete', component: DeleteComponent},
-  {path: '**', component: PageNotFoundComponent},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({

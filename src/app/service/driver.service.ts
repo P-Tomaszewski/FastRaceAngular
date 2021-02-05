@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Driver} from '../spec/driver';
 
@@ -14,7 +14,10 @@ export class DriverService {
   }
 
   public findAll(): Observable<Driver[]> {
-    return this.http.get<Driver[]>(this.driversUrl);
+    // const headers = new HttpHeaders({ Authorization: 'Basic ' + sessionStorage.getItem('token') });
+    return this.http.get<Driver[]>(this.driversUrl,
+      // {headers }
+      );
   }
 
   public save(driver: Driver) {

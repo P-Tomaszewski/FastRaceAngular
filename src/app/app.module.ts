@@ -14,9 +14,10 @@ import {AppRoutingModule} from './app-routing.module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import {DriverService} from './service/driver.service';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { DeleteComponent } from './pages/delete/delete.component';
 import {LoginComponent} from './pages/login/login.component';
+import {TokenInterceptor} from './auth/toke.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,13 @@ import {LoginComponent} from './pages/login/login.component';
     BrowserModule, AppRoutingModule, HttpClientModule,
     FormsModule
   ],
-  providers: [DriverService],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
