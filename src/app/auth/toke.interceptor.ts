@@ -20,4 +20,6 @@ export class TokenInterceptor implements HttpInterceptor {
   public getToken(): string {
     return sessionStorage.getItem('token');
   }
+
+
 }

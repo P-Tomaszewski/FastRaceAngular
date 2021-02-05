@@ -10,20 +10,74 @@ import {ResultComponent} from './pages/result/result.component';
 import {TopComponent} from './pages/top/top.component';
 import {DeleteComponent} from './pages/delete/delete.component';
 import {LoginComponent} from './pages/login/login.component';
+import {BaselayoutComponent} from './baselayout/baselayout.component';
+import {SitelayoutComponent} from './sitelayout/sitelayout.component';
+import {AppComponent} from './app.component';
 
 const routes: Routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
-  {path: 'add-score', component: AddScoreComponent},
-  {path: 'add-driver', component: AddDriverComponent},
-  {path: 'add-race', component: AddRaceComponent},
-  {path: 'result/:id', component: ResultComponent},
-  {path: 'contact', component: ContactComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'result', component: ResultComponent},
-  {path: 'top', component: TopComponent},
-  {path: 'delete', component: DeleteComponent},
+  { path: '', component: LoginComponent},
+  { path: '', component: AppComponent,
+  children: [
+    {
+      path:'login',
+      component: LoginComponent
+    }
+  ]},
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'add-score',
+      component: AddScoreComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'add-driver',
+      component: AddDriverComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'add-race',
+      component: AddRaceComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'result/:id',
+      component: ResultComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'contact',
+      component: ContactComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+  children:[{
+    path: 'home',
+    component: HomeComponent
+  }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'delete',
+      component: DeleteComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'top',
+      component: TopComponent
+    }]
+  },
+  {path: '', component: SitelayoutComponent,
+    children:[{
+      path: 'result',
+      component: ResultComponent
+    }]
+  },
   {path: '**', redirectTo: ''},
 ];
 

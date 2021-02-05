@@ -18,6 +18,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { DeleteComponent } from './pages/delete/delete.component';
 import {LoginComponent} from './pages/login/login.component';
 import {TokenInterceptor} from './auth/toke.interceptor';
+import { BaselayoutComponent } from './baselayout/baselayout.component';
+import { SitelayoutComponent } from './sitelayout/sitelayout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import {TokenInterceptor} from './auth/toke.interceptor';
     PageNotFoundComponent,
     DeleteComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    BaselayoutComponent,
+    SitelayoutComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

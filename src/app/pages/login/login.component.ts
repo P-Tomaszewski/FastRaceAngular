@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       password: this.model.password
     }).subscribe(isValid => {
       if (isValid) {
-        // sessionStorage.setItem('username', this.model.userName);
         sessionStorage.setItem(
           'token',
           btoa(this.model.username + ':' + this.model.password)
@@ -43,12 +42,9 @@ export class LoginComponent implements OnInit {
         alert("Authentication failed.")
       }
     });
-    this.isUserLoggedIn();
   }
 
-  isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    console.log((user === null))
-    return (user === null)
+  logOut() {
+    sessionStorage.removeItem('username')
   }
 }
