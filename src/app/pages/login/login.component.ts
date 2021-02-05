@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpBackend, HttpClient} from '@angular/common/http';
 import {HomeService} from '../../service/home.service';
 import {AuthenticationService} from '../../auth/auth.service';
 
@@ -12,13 +12,15 @@ import {AuthenticationService} from '../../auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-
+  private http: HttpClient;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private http: HttpClient,
+    private handler: HttpBackend,
     private token: HomeService
-  ) { }
+  ) {
+    this.http = new HttpClient(handler);
+  }
 
   ngOnInit() {
     sessionStorage.setItem('token', '');

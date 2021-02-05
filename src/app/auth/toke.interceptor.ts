@@ -8,13 +8,11 @@ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/com
 export class TokenInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // if((sessionStorage.getItem('token') != null)) {
       request = request.clone({
         setHeaders: {
           'Authorization': 'Basic ' + sessionStorage.getItem('token')
         }
       });
-    // }
     console.log(sessionStorage.getItem('token'));
       return next.handle(request);
   }
@@ -23,5 +21,3 @@ export class TokenInterceptor implements HttpInterceptor {
     return sessionStorage.getItem('token');
   }
 }
-
-//Sprawdzic bez interceptora.
